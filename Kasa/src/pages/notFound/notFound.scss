@@ -1,0 +1,55 @@
+@import '../../sass/main.scss';
+
+.Footer{
+    width: 100%; 
+    
+}
+
+.notFound{
+    max-width: 90%;
+    margin: 0 auto;
+    color: $color-secondary;
+    &_infos{
+        @include flex(column, center, center);
+        min-height: calc(100vh - 250px);
+        &_title{
+            font-weight: 700;
+            font-size: 288px;
+            @media screen and (max-width: 768px) {
+                font-size: 140px;    
+            }
+        }
+        &_content{
+            font-weight: 500;
+            font-size: clamp(20px, 4vw, 36px);
+            text-align: center;
+        }
+        &_return{   
+            height: 5px;
+            padding-bottom: 100px;
+            position: relative;
+            display: block;
+            width: fit-content;
+            color: black;
+            margin: 0 auto;
+            font-weight: 500;
+            font-size: clamp(12px, 2.5vw, 18px);
+
+            &:hover::after{
+                width: 100%;
+            }
+            
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 60%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 2px;
+                background-color: $color-secondary;
+                transition: width 0.2s ease-in-out;
+            }
+        }
+    }
+}
